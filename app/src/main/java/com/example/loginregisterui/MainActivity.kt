@@ -13,6 +13,27 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
 class MainActivity : AppCompatActivity() {
+    private val inputEmail: TextInputLayout
+        get() = findViewById<TextInputLayout>(R.id.InputEmail);
+
+    private val inputPassword: TextInputLayout
+        get() = findViewById<TextInputLayout>(R.id.InputPassword);
+
+    private val inputEmailText: String
+        get() = findViewById<TextInputEditText>(R.id.InputEmailText).text.toString();
+
+    private val inputPasswordText: String
+        get() = findViewById<TextInputEditText>(R.id.InputPasswordText).text.toString();
+
+    private val nextButton: Button
+        get() = findViewById<Button>(R.id.next_button);
+
+    private val isEmailValid: Boolean
+        get() = CredentialsManager().isEmailValid(inputEmailText.toString());
+
+    private val isPasswordValid: Boolean
+        get() = CredentialsManager().isPasswordValid(inputPasswordText.toString());
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -23,20 +44,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-
-
-        val inputEmail = findViewById<TextInputLayout>(R.id.InputEmail);
-        val inputPasword = findViewById<TextInputLayout>(R.id.InputPassword);
-
-        val inputEmailText = findViewById<TextInputEditText>(R.id.InputEmailText).text;
-        val inputPasswordText = findViewById<TextInputEditText>(R.id.InputPasswordText).text;
-
-        val nextButton = findViewById<Button>(R.id.next_button);
         nextButton.setOnClickListener {
-
-            val isEmailValid = CredentialsManager().isEmailValid(inputEmailText.toString());
-            val isPasswordValid = CredentialsManager().isPasswordValid(inputPasswordText.toString());
-
             if(!isEmailValid) {
                 inputEmail.isErrorEnabled = true;
                 inputEmail.error = "Email is invalid!";
@@ -46,17 +54,12 @@ class MainActivity : AppCompatActivity() {
 
             if(!isPasswordValid) {
                 inputEmail.isErrorEnabled = true;
-                inputPasword.error = "Password is invalid!";
+                inputPassword.error = "Password is invalid!";
             }else{
                 inputEmail.isErrorEnabled = false;
             }
 
         }
-
-
-
-
-
 
         val registerNowLabel = findViewById<TextView>(R.id.registerNowLabel)
         registerNowLabel.setOnClickListener {
