@@ -1,6 +1,7 @@
 package com.example.loginregisterui
 
 import junit.framework.TestCase.assertEquals
+import junit.framework.TestCase.assertTrue
 import org.junit.Test
 
 class CredentialsManagerTest {
@@ -51,6 +52,16 @@ class CredentialsManagerTest {
         assertEquals(true, isPasswordValid)
     }
 
+    @Test
+    fun givenProperCredentials_whenUserRegisters_thenCreateAccount() {
+        val credentialsManager = CredentialsManager()
+
+        credentialsManager.register("John", "another@te.st", "600 600 000", "12234")
+
+        val isLoginSuccess = credentialsManager.login("another@te.st", "12234")
+
+        assertTrue(isLoginSuccess)
+    }
 
 }
 
