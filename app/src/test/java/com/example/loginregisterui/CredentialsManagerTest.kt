@@ -54,14 +54,37 @@ class CredentialsManagerTest {
 
     @Test
     fun givenProperCredentials_whenUserRegisters_thenCreateAccount() {
+        val email = "another@te.st"
+        val password = "12234"
+
         val credentialsManager = CredentialsManager()
 
-        credentialsManager.register("John", "another@te.st", "600 600 000", "12234")
+        credentialsManager.register("John", email,  "600 600 000", password)
 
-        val isLoginSuccess = credentialsManager.login("another@te.st", "12234")
+        val isLoginSuccess = credentialsManager.login(email, password)
 
-        assertTrue(isLoginSuccess)
+        assertEquals(true, isLoginSuccess)
     }
+
+    // TODO: Given used email, when user registers, then return error
+    @Test
+    fun givenUsedEmail_whenUserRegisters_thenReturnError() {
+        val email = "test@te.st"
+        val fullName = "Wide Q"
+        val password = "C4S4N0SSTR4"
+        val number = "100 200 300"
+
+        val credentialsManager = CredentialsManager()
+
+        val isRegisterSuccess = credentialsManager.register(fullName, email, number, password)
+
+        assertEquals(false, isRegisterSuccess)
+
+    }
+    // TODO: Given used email with different casing, =||=, =||=
+
+
+    // TODO: =||=, when user logins, then return success
 
 }
 

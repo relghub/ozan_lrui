@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
     private val isPasswordValid: Boolean
         get() = CredentialsManager().isPasswordValid(inputPasswordText.toString());
 
+    val credentialsManager = CredentialsManager()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
