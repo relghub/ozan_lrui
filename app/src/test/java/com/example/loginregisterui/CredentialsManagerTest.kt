@@ -54,12 +54,14 @@ class CredentialsManagerTest {
 
     @Test
     fun givenProperCredentials_whenUserRegisters_thenCreateAccount() {
+        val fullName = "John"
         val email = "another@te.st"
+        val number = "600 600 000"
         val password = "12234"
 
         val credentialsManager = CredentialsManager()
 
-        credentialsManager.register("John", email,  "600 600 000", password)
+        credentialsManager.register(fullName, email, number, password)
 
         val isLoginSuccess = credentialsManager.login(email, password)
 
@@ -69,7 +71,22 @@ class CredentialsManagerTest {
     // TODO: Given used email, when user registers, then return error
     @Test
     fun givenUsedEmail_whenUserRegisters_thenReturnError() {
+        val fullName = "Wide Q"
         val email = "test@te.st"
+        val number = "100 200 300"
+        val password = "C4S4N0SSTR4"
+
+        val credentialsManager = CredentialsManager()
+
+        val isRegisterSuccess = credentialsManager.register(fullName, email, number, password)
+
+        assertEquals(false, isRegisterSuccess)
+
+    }
+
+    @Test
+    fun givenUsedEmailInDifferentCasing_whenUserRegisters_thenReturnError() {
+        val email = "TEST@te.st"
         val fullName = "Wide Q"
         val password = "C4S4N0SSTR4"
         val number = "100 200 300"
@@ -81,11 +98,19 @@ class CredentialsManagerTest {
         assertEquals(false, isRegisterSuccess)
 
     }
-    // TODO: Given used email with different casing, =||=, =||=
 
+    @Test
+    fun givenUsedEmailInDifferentCasing_whenUserLogins_thenReturnSuccess() {
+        val email = "TEST@te.st"
+        val password = "1234"
 
-    // TODO: =||=, when user logins, then return success
+        val credentialsManager = CredentialsManager()
 
+        val isLoginSuccess = credentialsManager.login(email, password)
+
+        assertEquals(true, isLoginSuccess)
+
+    }
 }
 
 
