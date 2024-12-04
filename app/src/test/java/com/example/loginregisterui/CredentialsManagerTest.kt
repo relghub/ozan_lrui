@@ -83,7 +83,7 @@ class CredentialsManagerTest {
         assertEquals(false, isRegisterSuccess)
 
     }
-    // TODO: Given used email in different casing, =||=, =||=
+
     @Test
     fun givenUsedEmailInDifferentCasing_whenUserRegisters_thenReturnError() {
         val email = "TEST@te.st"
@@ -99,7 +99,6 @@ class CredentialsManagerTest {
 
     }
 
-    // TODO: =||=, when user logins, then return success
     @Test
     fun givenUsedEmailInDifferentCasing_whenUserLogins_thenReturnSuccess() {
         val email = "TEST@te.st"
