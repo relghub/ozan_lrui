@@ -3,7 +3,7 @@ package com.example.loginregisterui
 import kotlin.text.equals
 
 class CredentialsManager {
-    val credentialsMap = mutableMapOf(Pair("test@te.st", "1234"))
+    val credentialsMap = mutableMapOf((Pair("test@te.st", "1234")))
 
 
     fun isEmailValid(email: String): Boolean {
@@ -16,8 +16,16 @@ class CredentialsManager {
         return password.isNotEmpty()
     }
 
+    fun isFullNameValid(fullName: String): Boolean {
+        return fullName.isNotEmpty()
+    }
+
+    fun isPhoneNumberValid(phoneNumber: String): Boolean{
+        return phoneNumber.isNotEmpty()
+    }
+
     fun login(email: String, password: String): Boolean {
-        return credentialsMap[email].equals(password)
+        return credentialsMap[email.lowercase()].equals(password)
     }
 
     fun register(fullName: String, email: String, phoneNumber: String, password: String) : Boolean {
