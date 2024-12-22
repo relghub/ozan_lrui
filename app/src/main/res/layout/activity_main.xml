@@ -18,7 +18,7 @@
         android:id="@+id/toggle_fragment_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Toggle Fragment"
+        android:text="@string/toggle_fragment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
