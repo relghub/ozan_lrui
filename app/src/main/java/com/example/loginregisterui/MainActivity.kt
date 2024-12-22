@@ -1,40 +1,20 @@
 package com.example.loginregisterui
 
 import android.os.Bundle
-import android.widget.Button
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
-    private var isFragmentADisplayed = true
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, FragmentA())
-                .commit()
+        enableEdgeToEdge()
+        setContentView(R.layout.main_activity)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
         }
-
-        val toggleButton: Button = findViewById(R.id.toggle_fragment_button)
-        toggleButton.setOnClickListener {
-            toggleFragment()
-        }
-    }
-
-    private fun toggleFragment() {
-        val fragmentToShow: Fragment = if (isFragmentADisplayed) {
-            FragmentB()
-        } else {
-            FragmentA()
-        }
-
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragmentToShow)
-            .commit()
-
-        isFragmentADisplayed = !isFragmentADisplayed
     }
 }
