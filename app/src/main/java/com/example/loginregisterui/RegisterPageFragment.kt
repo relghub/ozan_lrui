@@ -21,26 +21,26 @@ class RegisterPageFragment : Fragment(R.layout.register_page_fragment) {
         val inputPhoneNumber = view.findViewById<TextInputLayout>(R.id.InputPhoneNumber)
         val inputPassword = view.findViewById<TextInputLayout>(R.id.InputStrongPassword)
 
-        val inputFullNameText =
-            view.findViewById<TextInputEditText>(R.id.InputFullNameText).text.toString()
-        val inputEmailText =
-            view.findViewById<TextInputEditText>(R.id.InputValidEmailText).text.toString()
-        val inputPhoneNumberText =
-            view.findViewById<TextInputEditText>(R.id.InputPhoneNumberText).text.toString()
-        val inputPasswordText =
-            view.findViewById<TextInputEditText>(R.id.InputStrongPasswordText).text.toString()
-
-        val confirmEulaCheckBox = view.findViewById<CheckBox>(R.id.checkbox_agreeTerms)
         val nextButton = view.findViewById<Button>(R.id.button_createAccount)
 
-        val isFullNameValid = CredentialsManager().isFullNameValid(inputFullNameText)
-        val isEmailValid = CredentialsManager().isEmailValid(inputEmailText)
-        val isPhoneNumberValid = CredentialsManager().isPhoneNumberValid(inputPhoneNumberText)
-        val isPasswordValid = CredentialsManager().isPasswordValid(inputPasswordText)
-
-        val credentialsManager = CredentialsManager()
-
         nextButton.setOnClickListener {
+            val inputFullNameText =
+                view.findViewById<TextInputEditText>(R.id.InputFullNameText).text.toString()
+            val inputEmailText =
+                view.findViewById<TextInputEditText>(R.id.InputValidEmailText).text.toString()
+            val inputPhoneNumberText =
+                view.findViewById<TextInputEditText>(R.id.InputPhoneNumberText).text.toString()
+            val inputPasswordText =
+                view.findViewById<TextInputEditText>(R.id.InputStrongPasswordText).text.toString()
+
+            val confirmEulaCheckBox = view.findViewById<CheckBox>(R.id.checkbox_agreeTerms)
+
+            val isFullNameValid = CredentialsManager().isFullNameValid(inputFullNameText)
+            val isEmailValid = CredentialsManager().isEmailValid(inputEmailText)
+            val isPhoneNumberValid = CredentialsManager().isPhoneNumberValid(inputPhoneNumberText)
+            val isPasswordValid = CredentialsManager().isPasswordValid(inputPasswordText)
+
+            val credentialsManager = CredentialsManager()
             if (credentialsManager.register(
                     inputFullNameText,
                     inputEmailText,

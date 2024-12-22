@@ -3,12 +3,48 @@
 
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/next_button"
+    android:id="@+id/login_button"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <!-- Email -->
     <!-- Email -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/switch_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_createAccount">
+
+        <TextView
+            android:id="@+id/memberInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/already_member"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/loginLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/montserrat"
+
+            android:text="@string/log_in"
+            android:textColor="#6C63FF"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/memberInfo"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/textView"
@@ -22,7 +58,6 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,7 +65,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="1dp"
         android:fontFamily="@font/montserrat"
         android:text="@string/getStartedDesc"
 
@@ -41,21 +76,20 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/InputFullName"
         android:layout_width="335dp"
-        android:layout_height="59dp"
+        android:layout_height="80dp"
 
         android:layout_marginTop="16dp"
         app:endIconContentDescription="user icon"
         app:endIconDrawable="@drawable/user"
         app:endIconMode="custom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.605"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/InputFullNameText"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="60dp"
             android:background="@drawable/rectangle_text_background"
             android:fontFamily="@font/montserrat"
             android:hint="@string/full_name" />
@@ -64,21 +98,20 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/InputValidEmail"
         android:layout_width="335dp"
-        android:layout_height="59dp"
+        android:layout_height="80dp"
 
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         app:endIconContentDescription="user icon"
         app:endIconDrawable="@drawable/mail"
         app:endIconMode="custom"
         app:layout_constraintEnd_toEndOf="@+id/InputFullName"
-        app:layout_constraintHorizontal_bias="0.405"
         app:layout_constraintStart_toStartOf="@+id/InputFullName"
         app:layout_constraintTop_toBottomOf="@+id/InputFullName">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/InputValidEmailText"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="60dp"
             android:background="@drawable/rectangle_text_background"
             android:fontFamily="@font/montserrat"
             android:hint="@string/valid_email_hint" />
@@ -88,21 +121,20 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/InputPhoneNumber"
         android:layout_width="335dp"
-        android:layout_height="59dp"
+        android:layout_height="80dp"
 
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         app:endIconContentDescription="phone icon"
         app:endIconDrawable="@drawable/smartphone"
         app:endIconMode="custom"
         app:layout_constraintEnd_toEndOf="@+id/InputFullName"
-        app:layout_constraintHorizontal_bias="0.405"
         app:layout_constraintStart_toStartOf="@+id/InputFullName"
         app:layout_constraintTop_toBottomOf="@+id/InputValidEmail">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/InputPhoneNumberText"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="60dp"
             android:background="@drawable/rectangle_text_background"
             android:fontFamily="@font/montserrat"
             android:hint="@string/phone_number" />
@@ -111,21 +143,20 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/InputStrongPassword"
         android:layout_width="335dp"
-        android:layout_height="59dp"
+        android:layout_height="80dp"
 
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         app:endIconContentDescription="lock icon"
         app:endIconDrawable="@drawable/lock"
         app:endIconMode="custom"
         app:layout_constraintEnd_toEndOf="@+id/InputFullName"
-        app:layout_constraintHorizontal_bias="0.405"
         app:layout_constraintStart_toStartOf="@+id/InputFullName"
         app:layout_constraintTop_toBottomOf="@+id/InputPhoneNumber">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/InputStrongPasswordText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:background="@drawable/rectangle_text_background"
             android:fontFamily="@font/montserrat"
             android:hint="@string/strong_password" />
@@ -135,12 +166,11 @@
         android:id="@+id/checkbox_agreeTerms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="16dp"
         android:text="@string/checkbox_createAccount"
         android:textSize="11sp"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.365"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/InputStrongPassword" />
 
@@ -148,41 +178,13 @@
         android:id="@+id/button_createAccount"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="44dp"
         android:backgroundTint="#6C63FF"
         android:fontFamily="@font/montserrat"
         android:text="@string/next_button_text"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.414"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_agreeTerms"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/memberInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/montserrat"
-        android:text="@string/already_member"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_createAccount" />
-
-    <TextView
-        android:id="@+id/loginLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/montserrat"
-        android:text="@string/log_in"
-        android:textColor="#6C63FF"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/memberInfo"
-        app:layout_constraintTop_toBottomOf="@+id/button_createAccount" />
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_agreeTerms" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

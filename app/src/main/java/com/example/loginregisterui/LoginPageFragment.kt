@@ -24,7 +24,7 @@ class LoginPageFragment : Fragment(R.layout.login_page_fragment) {
         // TODO - Implement a session retention after exiting the app
         // val rememberMeCheckbox = view.findViewById<CheckBox>(R.id.checkbox_remember)
 
-        val nextButton = view.findViewById<Button>(R.id.button_createAccount)
+        val nextButton = view.findViewById<Button>(R.id.login_button)
 
         val isEmailValid = CredentialsManager().isEmailValid(inputEmailText)
         val isPasswordValid = CredentialsManager().isPasswordValid(inputPasswordText)

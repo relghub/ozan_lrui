@@ -118,7 +118,7 @@
         app:layout_constraintTop_toTopOf="@+id/checkbox_remember" />
 
     <Button
-        android:id="@+id/next_button"
+        android:id="@+id/login_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -141,8 +141,8 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/registerNowLabel"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="@+id/next_button"
-        app:layout_constraintTop_toBottomOf="@+id/next_button" />
+        app:layout_constraintStart_toStartOf="@+id/login_button"
+        app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
     <TextView
         android:id="@+id/registerNowLabel"
@@ -154,7 +154,7 @@
         android:textColor="#6C63FF"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/new_member"
-        app:layout_constraintEnd_toEndOf="@+id/next_button"
+        app:layout_constraintEnd_toEndOf="@+id/login_button"
         app:layout_constraintStart_toEndOf="@+id/new_member"
         app:layout_constraintTop_toTopOf="@+id/new_member" />
 
