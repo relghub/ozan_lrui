@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, fragmentA())
+                .replace(R.id.fragment_container, FragmentA())
                 .commit()
         }
 
@@ -26,9 +26,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun toggleFragment() {
         val fragmentToShow: Fragment = if (isFragmentADisplayed) {
-            fragmentB()
+            FragmentB()
         } else {
-            fragmentA()
+            FragmentA()
         }
 
         supportFragmentManager.beginTransaction()

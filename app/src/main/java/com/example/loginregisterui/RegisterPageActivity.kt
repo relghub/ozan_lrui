@@ -60,7 +60,7 @@ class RegisterPageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.register_page)
+        setContentView(R.layout.register_page_activity)
 
         nextButton.setOnClickListener {
             if (credentialsManager.register(
