@@ -25,4 +25,7 @@
     <string name="login_failed">"Login failed"</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="valid_email_hint">Valid email</string>
+    <string name="next_button_text"><![CDATA[Next >]]></string>
+    <string name="toggle_fragment">Toggle Fragment</string>
 </resources>

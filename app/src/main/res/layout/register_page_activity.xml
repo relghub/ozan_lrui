@@ -3,7 +3,6 @@
 
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/next_button"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -82,7 +81,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/rectangle_text_background"
             android:fontFamily="@font/montserrat"
-            android:hint="Valid email" />
+            android:hint="@string/valid_email_hint" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -138,7 +137,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         android:text="@string/checkbox_createAccount"
-        android:textSize="9sp"
+        android:textSize="11sp"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.365"
@@ -152,7 +151,7 @@
         android:layout_marginTop="44dp"
         android:backgroundTint="#6C63FF"
         android:fontFamily="@font/montserrat"
-        android:text="Next >"
+        android:text="@string/next_button_text"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
