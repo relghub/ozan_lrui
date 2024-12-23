@@ -43,27 +43,25 @@
         android:fontFamily="@font/montserrat"
         android:text="@string/WelcomeLabelDesc"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.582"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/InputEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="96dp"
         android:layout_marginTop="32dp"
         app:endIconContentDescription="mail icon"
         app:endIconDrawable="@drawable/mail"
         app:endIconMode="custom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintWidth_percent="0.85">
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/InputEmailText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:background="@drawable/rectangle_text_background"
             android:fontFamily="@font/montserrat"
             android:hint="@string/email_hint"
@@ -74,7 +72,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/InputPassword"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="96dp"
         android:layout_marginTop="16dp"
         app:endIconContentDescription="lock icon"
         app:endIconDrawable="@drawable/lock"
@@ -86,7 +84,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/InputPasswordText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:background="@drawable/rectangle_text_background"
             android:fontFamily="@font/montserrat"
             android:hint="@string/password_hint"

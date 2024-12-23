@@ -50,7 +50,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/montserrat"
         android:text="@string/get_started"
 
@@ -75,8 +75,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/InputFullName"
-        android:layout_width="335dp"
-        android:layout_height="80dp"
+        android:layout_width="300dp"
+        android:layout_height="84dp"
 
         android:layout_marginTop="16dp"
         app:endIconContentDescription="user icon"
@@ -97,8 +97,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/InputValidEmail"
-        android:layout_width="335dp"
-        android:layout_height="80dp"
+        android:layout_width="0dp"
+        android:layout_height="84dp"
 
         android:layout_marginTop="16dp"
         app:endIconContentDescription="user icon"
@@ -120,8 +120,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/InputPhoneNumber"
-        android:layout_width="335dp"
-        android:layout_height="80dp"
+        android:layout_width="0dp"
+        android:layout_height="84dp"
 
         android:layout_marginTop="16dp"
         app:endIconContentDescription="phone icon"
@@ -142,8 +142,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/InputStrongPassword"
-        android:layout_width="335dp"
-        android:layout_height="80dp"
+        android:layout_width="0dp"
+        android:layout_height="84dp"
 
         android:layout_marginTop="16dp"
         app:endIconContentDescription="lock icon"
