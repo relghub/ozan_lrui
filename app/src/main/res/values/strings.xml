@@ -40,4 +40,15 @@
         <item>Tempura</item>
         <item>Yakitori Shrimp</item>
     </string-array>
+
+    <string-array name="recipes_descriptions_list">
+        <item>This Japanese modern izakaya dish features crispy black ka..</item>
+        <item>A Japanese-style dish that’s quick and easy to prepare..</item>
+        <item>Is a Japanese noodle soup dish that originated in Fukuoka, Fu..</item>
+        <item>Is a Japanese snack that originated in Osaka, Japan. It is a ball-shaped cake made fr..</item>
+        <item>Is a popular Japanese dish that consists of seafood, vegetable..</item>
+        <item>Is a Japanese dish that consists of skewered and grilled chicken. However, it ca..</item>
+    </string-array>
+
+
 </resources>
