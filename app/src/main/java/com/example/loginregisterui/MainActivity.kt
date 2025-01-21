@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
-    val recipeModels = ArrayList<RecipeModel>()
+    private val recipeModels = ArrayList<RecipeModel>()
 
-    val recipeImages = arrayOf(R.drawable.karaage, R.drawable.udon, R.drawable.ramen,
+    private val recipeImages = arrayOf(R.drawable.karaage, R.drawable.udon, R.drawable.ramen,
         R.drawable.takoyaki, R.drawable.tempura, R.drawable.yakitori)
 
     override fun onCreate(savedInstanceState: Bundle?) {
