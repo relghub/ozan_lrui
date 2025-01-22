@@ -1,19 +1,22 @@
 package com.example.loginregisterui
 
 import android.os.Bundle
+import android.widget.SearchView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
-    private val recipeModels = ArrayList<RecipeModel>()
-
-    private val recipeImages = arrayOf(R.drawable.karaage, R.drawable.udon, R.drawable.ramen,
-        R.drawable.takoyaki, R.drawable.tempura, R.drawable.yakitori)
+    private lateinit var recipeViewModel: RecipeViewModel
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: RecipeAdapter
+    private lateinit var searchView: SearchView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,20 +27,43 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val recyclerView: RecyclerView = findViewById(R.id.recyclerview_recipes)
-        recyclerView.adapter = RecipeAdapter(setupRecipeModels())
+
+        // Initialize the repository and ViewModel
+        val repository = RecipeRepository(this)
+        val factory = RecipeViewModelFactory(repository)
+        recipeViewModel = ViewModelProvider(this, factory)[RecipeViewModel::class.java]
+
+        // Set up RecyclerView
+        recyclerView = findViewById(R.id.recyclerview_recipes)
+        adapter = RecipeAdapter()
+        recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
-    }
 
-    private fun setupRecipeModels(): List<RecipeModel> {
-        val recipeNames: Array<String> =
-            resources.getStringArray(R.array.recipes_list)
-        val recipeDescriptions: Array<String> =
-            resources.getStringArray(R.array.recipes_descriptions_list)
+        // Set up SearchView
+        searchView = findViewById(R.id.recipe_search)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                query?.let {
+                    recipeViewModel.setSearchQuery(it)
+                    recipeViewModel.filterRecipes(it)
+                }
+                return true
+            }
 
-        for (i in recipeNames.indices) {
-            recipeModels.add(RecipeModel(recipeNames[i], recipeDescriptions[i], recipeImages[i]))
+            override fun onQueryTextChange(newText: String?): Boolean {
+                newText?.let {
+                    recipeViewModel.setSearchQuery(it)
+                    recipeViewModel.filterRecipes(it)
+                }
+                return true
+            }
+        })
+
+        // Observe filtered recipes
+        recipeViewModel.filteredRecipes.observe(this) { recipes ->
+            if (recipes != null) {
+                adapter.submitList(recipes)
+            }
         }
-        return recipeModels
     }
 }
